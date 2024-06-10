@@ -23,13 +23,13 @@ export class MovieController {
   constructor(private readonly movieService: MovieService) {}
 
   @Post()
-  @UseInterceptors(FilesInterceptor('files'))
+  @UseInterceptors(FilesInterceptor('poster'))
   async create(
     @Body() createMovieDto: CreateMovieDto,
-    @UploadedFiles() files: Express.Multer.File,
-    @currentUser('id') userId: string,
+    @UploadedFiles() poster: Express.Multer.File,
   ) {
-    return await this.movieService.createMovie(createMovieDto, files, userId);
+    console.log("Create Movie DTO :", createMovieDto)
+    return await this.movieService.createMovie(createMovieDto, poster);
   }
   @Get()
   async findAll() {

@@ -22,13 +22,13 @@ export class MovieService {
   async createMovie(
     createMovieDto: CreateMovieDto,
     file: Express.Multer.File,
-    userId: string,
   ): Promise<Movie> {
     if (file) {
-      const uploadedImage = await this.cloudinary.uploadImage(file);
+      console.log('In File')
+      const uploadedImage = await this.cloudinary.uploadImage(file[0]);
+      console.log("as", uploadedImage)
       createMovieDto.poster = uploadedImage.secure_url;
     }
-    createMovieDto.userId = userId;
 
     return this.prisma.movie.create({
       data: {

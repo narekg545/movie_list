@@ -1,3 +1,5 @@
+// create-movie.dto.ts
+
 import { IsString, IsNotEmpty, IsOptional } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 
@@ -12,13 +14,11 @@ export class CreateMovieDto {
   @IsString()
   publishYear: string;
 
-  @ApiProperty({ description: 'The URL of the movie poster', example: 'https://example.com/poster.jpg' })
   @IsOptional()
-  @IsString()
-  poster: string;
-
+  poster: any;
+  
   @ApiProperty({ description: 'The ID of the user who added the movie', example: '12345' })
   @IsString()
-  @IsOptional()
+  @IsNotEmpty()
   userId: string;
 }

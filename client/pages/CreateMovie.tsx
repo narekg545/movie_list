@@ -65,8 +65,8 @@ const CreateMovie: React.FC = () => {
             <FormInput placeholder="Title" value={title} onChange={(e) => setTitle(e.target.value)}/>
             <FormInput placeholder="Publishing year" value={year} onChange={(e) => setYear(e.target.value)} />
             <div className="flex justify-between space-x-4">
-              <Button type="button" label="Cancel" onClick={handleCancel} variant="secondary" />
-              <Button type="submit" label="Submit" />
+              <Button  label="Cancel" onClick={handleCancel} variant="secondary" />
+              <Button  label="Submit" onClick={handleSubmit} />
             </div>
           </div>
         </form>
