@@ -27,8 +27,8 @@ const MovieList: React.FC = () => {
           <Button label="Logout" onClick={() => {}}  />
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full">
-          {movies?.map((movie: { title: string; year: string; imageUrl: string; }) => (
-            <MovieCard key={movie.title} title={movie.title} year={movie.year} imageUrl={movie.imageUrl} />
+          {movies?.map((movie: { title: string; publishYear: string; poster: string; }) => (
+            <MovieCard key={movie.title} title={movie.title} year={movie.publishYear} imageUrl={movie.poster} />
           ))}
         </div>
         <div className="flex justify-center items-center mt-8 space-x-4">

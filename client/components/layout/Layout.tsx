@@ -8,10 +8,12 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="min-h-screen flex flex-col justify-between items-center bg-backgroundColor">
-      <div>
+      <div className="w-full ">
           {children}
       </div>
-       <Image src={waves} alt="svg" width={3000} height={100}/>
+      <div className="relative w-full h-40">
+      <Image src={waves} alt="svg" layout="fill" objectFit="cover" />
+    </div>
     </div>
   );
 };

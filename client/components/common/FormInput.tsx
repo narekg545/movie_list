@@ -13,7 +13,7 @@ const FormInput: React.FC<FormInputProps> = ({ placeholder, value, onChange }) =
       placeholder={placeholder}
       value={value}
       onChange={onChange}
-      className="p-2 bg-dark text-white rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+      className="p-2 bg-dark rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500"
     />
   );
 };
